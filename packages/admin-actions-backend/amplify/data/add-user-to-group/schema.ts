@@ -12,7 +12,7 @@ export const addUserToGroup = a
   .handler(a.handler.function(resource))
   .returns(a.json())
 
-const schema = a.schema({ addUserToGroup })
+export const schema = a.schema({ addUserToGroup })
 
 export type Handler = ClientSchema<
   typeof schema

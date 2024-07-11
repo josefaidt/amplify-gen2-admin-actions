@@ -11,7 +11,7 @@ export const deleteGroup = a
   .handler(a.handler.function(resource))
   .returns(a.json())
 
-const schema = a.schema({ deleteGroup })
+export const schema = a.schema({ deleteGroup })
 
 export type Handler = ClientSchema<
   typeof schema

@@ -12,7 +12,7 @@ export const removeUserFromGroup = a
   .handler(a.handler.function(resource))
   .returns(a.json())
 
-const schema = a.schema({ removeUserFromGroup })
+export const schema = a.schema({ removeUserFromGroup })
 
 export type Handler = ClientSchema<
   typeof schema

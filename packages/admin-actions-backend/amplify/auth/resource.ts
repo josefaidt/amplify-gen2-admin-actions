@@ -6,6 +6,9 @@ import { postConfirmation } from "./post-confirmation/resource"
 import { removeUserFromGroup } from "../data/remove-user-from-group/resource"
 import { createGroup } from "../data/create-group/resource"
 import { deleteGroup } from "../data/delete-group/resource"
+import { disableUser } from "../data/disable-user/resource"
+import { enableUser } from "../data/enable-user/resource"
+import { listGroupsForUser } from "../data/list-groups-for-user/resource"
 
 /**
  * Define and configure your auth resource
@@ -28,7 +31,11 @@ export const auth = defineAuth({
   access: (allow) => [
     allow.resource(addUserToGroup).to(["addUserToGroup"]),
     allow.resource(removeUserFromGroup).to(["removeUserFromGroup"]),
-    allow.resource(createGroup).to(["manageGroups"]),
-    allow.resource(deleteGroup).to(["manageGroups"]),
+    allow.resource(createGroup).to(["createGroup"]),
+    allow.resource(deleteGroup).to(["deleteGroup"]),
+    allow.resource(disableUser).to(["disableUser"]),
+    allow.resource(listUsersInGroup).to(["listUsersInGroup"]),
+    allow.resource(enableUser).to(["enableUser"]),
+    allow.resource(listGroupsForUser).to(["listGroupsForUser"]),
   ],
 })
